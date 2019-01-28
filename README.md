@@ -4,12 +4,16 @@ Font Awesome-like usage for SVG
 ## Usage
 
 ```typescript
-const symbolDefs = 'assets/svg/symbol-defs.svg';
-const prefix = 'icon-';
-const selector = 'i.icon'; // Means the renderer will catch <i> tags having "icon" class.
-const iconCodes = ['bird', 'car', 'plane'];
+import {SvgIcon, Config} from './path/to/svg-icon';
 
-const renderer = new SvgRenderer(symbolDefs, prefix, selector, iconCodes);
+const config: Config = {
+    prefix: 'icon-',
+    iconCodes: ['bird', 'car', 'plane'],
+    selector: 'i.icon',
+    symbolDefsPath: 'assets/svg/symbol-defs.svg'
+};
+
+const svgicon = new SvgIcon(config);
 
 const html = `
 <div>
@@ -18,8 +22,10 @@ const html = `
 `;
 
 // Render for once
-renderer.render(html);
+svgicon.renderOnce(html);
 
 // Or observe and render continiously
-renderer.startObserving(html);
+svgicon.startObserving(html);
+
+// The output will be a bird icon which has been already defined in svg definitions
 ```
