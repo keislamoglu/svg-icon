@@ -1,3 +1,5 @@
+import 'svgxuse'; // Must be imported for cross-browser compatibility
+
 export interface Config {
     /**
      * Definition path of svg symbols

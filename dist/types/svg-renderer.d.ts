@@ -1,3 +1,4 @@
+import 'svgxuse';
 export interface Config {
     symbolDefsPath: string;
     prefix: string;
@@ -7,5 +8,5 @@ export declare class SvgRenderer {
     private config;
     constructor(config: Config);
     convertSvg(el: Element): void;
-    private _parseIconCode;
+    private _parseIconCode(el);
 }

@@ -1,6 +1,6 @@
 {
   "name": "@keislamoglu/svg-icon",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Font Awesome-like usage for SVG",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -20,5 +20,8 @@
   "keywords": [],
   "devDependencies": {
     "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "svgxuse": "^1.2.6"
   }
 }

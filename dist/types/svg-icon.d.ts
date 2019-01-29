@@ -10,6 +10,6 @@ export declare class SvgIcon {
     startObserving(html: Element): void;
     stopObserving(): void;
     renderOnce(html: Element): void;
-    private _render;
-    private _observerCallback;
+    private _render(html);
+    private _observerCallback(mutations);
 }

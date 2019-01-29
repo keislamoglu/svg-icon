@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+require("svgxuse");
 var SvgRenderer = (function () {
     function SvgRenderer(config) {
         this.config = config;
