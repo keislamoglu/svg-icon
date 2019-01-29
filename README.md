@@ -1,4 +1,4 @@
-# svgicon
+# svg-icon
 Font Awesome-like usage for SVG
 
 ## Usage
