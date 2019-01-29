@@ -32,3 +32,16 @@ svgicon.startObserving(html);
 
 ## Tips
 - If you have separated SVG files, you can use http://fontastic.me/ to collect all in a file.
+- You can use the following css to arrange icon size using 'font-size' property:
+```css
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    vertical-align: -.125em;
+    font-size: 1rem;
+}
+```
