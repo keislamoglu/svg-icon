@@ -29,3 +29,6 @@ svgicon.startObserving(html);
 
 // The output will be a bird icon which has been already defined in svg definitions
 ```
+
+## Tips
+- If you have separated SVG files, you can use http://fontastic.me/ to collect all in a file.
