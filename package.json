@@ -1,5 +1,5 @@
 {
-  "name": "svg-icon",
+  "name": "@keislamoglu/svg-icon",
   "version": "1.0.0",
   "description": "Font Awesome-like usage for SVG",
   "main": "index.js",
