@@ -1,6 +1,6 @@
 {
   "name": "@keislamoglu/svg-icon",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Font Awesome-like usage for SVG",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
