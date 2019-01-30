@@ -1,6 +1,6 @@
 {
   "name": "@keislamoglu/svg-icon",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Font Awesome-like usage for SVG",
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
@@ -17,7 +17,13 @@
     "url": "https://github.com/keislamoglu/svgicon/issues"
   },
   "homepage": "https://github.com/keislamoglu/svgicon#readme",
-  "keywords": [],
+  "keywords": [
+    "svg-icons",
+    "svg",
+    "svg-files",
+    "fontawesome",
+    "icons"
+  ],
   "devDependencies": {
     "rimraf": "^2.6.3"
   },
