@@ -1,13 +1,15 @@
 import './main.css';
-import {SvgIcon} from "@keislamoglu/svg-icon";
+import {SvgIcon, SvgRenderer} from "@keislamoglu/svg-icon";
 
-const [iconCodes, symbolDefsPath, prefix, selector] = [
+const [iconCodes, symbolDefsPath, prefix] = [
     require('../assets/icon-codes.json'),
     '../assets/icons.svg',
     'icon-',
     'i.icon'
 ];
 
-const svgicon = new SvgIcon({iconCodes, symbolDefsPath, prefix, selector});
+const renderer = new SvgRenderer({iconCodes, symbolDefsPath, prefix});
+
+const svgicon = new SvgIcon(renderer, 'i.icon');
 
 svgicon.startObserving(document.body);
