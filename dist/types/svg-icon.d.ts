@@ -1,15 +1,12 @@
-import { Config as RendererConfig } from "./svg-renderer";
-export interface Config extends RendererConfig {
-    selector: string;
-}
+import { Renderer } from "./renderer.interface";
 export declare class SvgIcon {
-    private config;
+    private renderer;
+    private selector;
     private _mutationObserver;
-    private _renderer;
-    constructor(config: Config);
+    constructor(renderer: Renderer, selector: string);
     startObserving(html: Element): void;
     stopObserving(): void;
     renderOnce(html: Element): void;
-    private _render(html);
-    private _observerCallback(mutations);
+    private _render;
+    private _observerCallback;
 }

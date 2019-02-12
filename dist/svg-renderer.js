@@ -6,6 +6,8 @@ var SvgRenderer = (function () {
         this.config = config;
     }
     SvgRenderer.prototype.convertSvg = function (el) {
+        if (!el.parentNode)
+            throw new Error('Element should have a parent node');
         var iconCode = this._parseIconCode(el);
         if (!iconCode)
             return;

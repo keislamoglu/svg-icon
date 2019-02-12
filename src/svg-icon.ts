@@ -1,28 +1,13 @@
-import {SvgRenderer as Renderer, Config as RendererConfig} from "./svg-renderer";
-
-export interface Config extends RendererConfig {
-    /**
-     * Stands for getting all proper elements that will be converted into SVG icon
-     */
-    selector: string;
-}
+import {Renderer} from "./renderer.interface";
 
 /**
  * Renders proper elements according to given selector to SVG icons.
  * This can be used to render html element to convert into svg icon for once or continuously.
- *
- * Requires {@link Config}
  */
 export class SvgIcon {
     private _mutationObserver: MutationObserver | null = null;
-    private _renderer: Renderer;
 
-    constructor(private config: Config) {
-        this._renderer = new Renderer({
-            iconCodes: config.iconCodes,
-            symbolDefsPath: config.symbolDefsPath,
-            prefix: config.prefix
-        });
+    constructor(private renderer: Renderer, private selector: string) {
     }
 
     /**
@@ -56,16 +41,16 @@ export class SvgIcon {
      */
     private _render(html: Element) {
         // If matches with selector, convert the html into SVG it-self directly.
-        if (html.matches(this.config.selector)) {
-            this._renderer.convertSvg(html);
+        if (html.matches(this.selector)) {
+            this.renderer.convertSvg(html);
             return;
         }
 
         // Otherwise, look for child nodes.
-        const nodeList = html.querySelectorAll(this.config.selector);
+        const nodeList = html.querySelectorAll(this.selector);
 
         for (let i = 0, l = nodeList.length; i < l; i++)
-            this._renderer.convertSvg(nodeList.item(i));
+            this.renderer.convertSvg(nodeList.item(i));
     }
 
     /**

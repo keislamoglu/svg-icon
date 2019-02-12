@@ -4,4 +4,5 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./svg-icon"));
+__export(require("./svg-renderer"));
 //# sourceMappingURL=index.js.map

@@ -1,15 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var svg_renderer_1 = require("./svg-renderer");
 var SvgIcon = (function () {
-    function SvgIcon(config) {
-        this.config = config;
+    function SvgIcon(renderer, selector) {
+        this.renderer = renderer;
+        this.selector = selector;
         this._mutationObserver = null;
-        this._renderer = new svg_renderer_1.SvgRenderer({
-            iconCodes: config.iconCodes,
-            symbolDefsPath: config.symbolDefsPath,
-            prefix: config.prefix
-        });
     }
     SvgIcon.prototype.startObserving = function (html) {
         this._render(html);
@@ -26,13 +21,13 @@ var SvgIcon = (function () {
         this._render(html);
     };
     SvgIcon.prototype._render = function (html) {
-        if (html.matches(this.config.selector)) {
-            this._renderer.convertSvg(html);
+        if (html.matches(this.selector)) {
+            this.renderer.convertSvg(html);
             return;
         }
-        var nodeList = html.querySelectorAll(this.config.selector);
+        var nodeList = html.querySelectorAll(this.selector);
         for (var i = 0, l = nodeList.length; i < l; i++)
-            this._renderer.convertSvg(nodeList.item(i));
+            this.renderer.convertSvg(nodeList.item(i));
     };
     SvgIcon.prototype._observerCallback = function (mutations) {
         var _this = this;
