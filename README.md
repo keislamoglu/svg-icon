@@ -3,29 +3,26 @@ Font Awesome-like usage for SVG
 
 ## Usage
 
-```typescript
-import {SvgIcon, Config} from '@keislamoglu/svg-icon';
-
-const config: Config = {
-    prefix: 'icon-',
-    selector: 'i.icon',
-    iconCodes: ['bird', 'car', 'plane'],
-    symbolDefsPath: 'assets/svg/icons.svg'
-};
-
-const svgicon = new SvgIcon(config);
-
-const html = `
-<div>
-  <i class="icon icon-bird"></i>
+HTML:
+```html
+<div class="content">
+    <i class="icon icon-bird"></i>
 </div>
-`;
+```
+
+Script:
+```typescript
+import {SvgIcon, SvgRenderer} from '@keislamoglu/svg-icon';
+
+const renderer = new SvgRenderer({ prefix: 'icon-', iconCodes: ['bird'], symbolDefsPath: 'assets/svg/icons.svg' });
+
+const svgicon = new SvgIcon(renderer, 'i.icon');
 
 // Render for once
-svgicon.renderOnce(html);
+svgicon.renderOnce(document.body);
 
 // Or observe and render continiously
-svgicon.startObserving(html);
+svgicon.startObserving(document.body);
 
 // The output will be a bird icon which has been already defined in svg definitions file icons.svg
 ```
